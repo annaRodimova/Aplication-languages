@@ -1,10 +1,14 @@
 package Databases;
 
+
+import Graphics_new.Frame_Home;
+
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        DataBases dataBases = new DataBases();
-        System.out.println(dataBases.search("картина"));
+        Frame_Home frame = new Frame_Home();
+        frame.home_frame();
+
     }
 }
