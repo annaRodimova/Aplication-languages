@@ -75,5 +75,6 @@ public class Components_learn {
     public ArrayList<Component> return_array_buttons_learn() {
 
         return all_buttons_learn;
+
     }
 }

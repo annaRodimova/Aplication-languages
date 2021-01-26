@@ -51,7 +51,7 @@ public class Components_Random {
                     String random_learn = new learning().random_russian_word();
                     text_word.setText(random_learn);
                     while (true) {
-                        if(text_translation.getText().equals("null")&& text_translation.getText().equals("Translation")) {
+                        if(text_translation.getText().equals("null") && text_translation.getText().equals("Translation")) {
                             continue;
                         }
                         else

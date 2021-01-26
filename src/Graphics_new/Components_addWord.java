@@ -28,10 +28,10 @@ public class Components_addWord implements Methods {
         JTextField text_name = new JTextField("Add Words");
         text_name.setBackground(new Color(0x5DBFBF));
         text_name.setBounds(250, 0, 200, 50);
-        JTextField text_word = new JTextField("WORD");
+        JTextField text_word = new JTextField("WORD (english)");
         text_word.setBackground(new Color(0xF8FAFA));
         text_word.setBounds(10, 150, 300, 200);
-        JTextField text_translation = new JTextField("Translation");
+        JTextField text_translation = new JTextField("Translation (russian)");
         text_translation.setBackground(new Color(0x969999));
         text_translation.setBounds(395, 400, 300, 200);
 
@@ -42,7 +42,13 @@ public class Components_addWord implements Methods {
         random_button.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    add_new_word(text_word.getText(), text_translation.getText(), "dict");
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException classNotFoundException) {
+                    classNotFoundException.printStackTrace();
+                }
             }
         });
         learn_button.addActionListener(new AbstractAction() {
@@ -55,6 +61,13 @@ public class Components_addWord implements Methods {
                 } catch (ClassNotFoundException classNotFoundException) {
                     classNotFoundException.printStackTrace();
                 }
+            }
+        });
+        addWord_button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text_word.setText(null);
+                text_translation.setText(null);
             }
         });
 

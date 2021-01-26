@@ -39,7 +39,7 @@ public class learning implements Methods {
                 }
 
                 if (word.equals(select_word)) {
-                    add_new_word(translation, word, "dict");
+                    add_new_word(translation, word, "ready_dict");
                     statement.executeUpdate(String.format("delete from dict where word = '%s';", word));
                     result = true;
                 }
@@ -55,7 +55,7 @@ public class learning implements Methods {
                     }
 
                 if (word.equals(select_word)) {
-                    add_new_word(word, translation, "dict");
+                    add_new_word(word, translation, "ready_dict");
                     statement.executeUpdate(String.format("delete * from dict where translation = '%s';", word));
                     result = true;
                 }
